@@ -1,0 +1,38 @@
+@import "custom";
+
+.header {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+
+h1 {
+  color: #2b3674;
+}
+
+h4 {
+  font-weight: 400;
+}
+h3 {
+  font-weight: 700;
+}
+
+span {
+  color: #a3aed0;
+  font-size: 14px;
+  &.dangerText {
+    color: #dc3545;
+  }
+
+  &.infoText {
+    color: #17a2b8;
+    font-weight: bold;
+  }
+}
