@@ -31,6 +31,12 @@ $theme-colors: (
   padding: 0 10px;
 }
 
+.form-control::placeholder {
+  color: #999; /* Change the color to your desired placeholder color */
+  font-style: italic; /* Add any additional styling you want */
+  font-size: 14px;
+}
+
 .signin-button {
   width: 100%;
   height: 54px;

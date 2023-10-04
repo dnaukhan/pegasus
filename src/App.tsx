@@ -6,8 +6,8 @@ import WelcomePage from "./pages/WelcomePage";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<WelcomePage />} />
-      <Route path="/main-dashboard" element={<MainDashboard />} />
+      <Route path="/" element={<MainDashboard />} />
+      <Route path="/main-dashboard" element={<WelcomePage />} />
     </Routes>
   );
 }
