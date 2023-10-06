@@ -1,5 +1,50 @@
 import React, { useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Col, Nav, Navbar } from "react-bootstrap";
+import HomeIcon from "../../assets/icons/HomeIcon";
+import CartIcon from "../../assets/icons/CartIcon";
+import TableIcon from "../../assets/icons/TableIcon";
+import KanbanIcon from "../../assets/icons/KanbanIcon";
+import ProfileIcon from "../../assets/icons/ProfileIcon";
+import SignInIcon from "../../assets/icons/SignInIcon";
+
+const NavbarInfo = [
+  {
+    id: 0,
+    icon: <HomeIcon />,
+    title: "Dashboard",
+    path: "#",
+  },
+  {
+    id: 1,
+    icon: <CartIcon />,
+    title: "NFT Marketplace",
+    path: "#",
+  },
+  {
+    id: 2,
+    icon: <TableIcon />,
+    title: "Tables",
+    path: "#",
+  },
+  {
+    id: 3,
+    icon: <KanbanIcon />,
+    title: "Kanban",
+    path: "#",
+  },
+  {
+    id: 4,
+    icon: <ProfileIcon />,
+    title: "Profile",
+    path: "#",
+  },
+  {
+    id: 5,
+    icon: <SignInIcon />,
+    title: "Sign in",
+    path: "#",
+  },
+];
 
 const VerticalNavbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -19,12 +64,18 @@ const VerticalNavbar = () => {
       </Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="flex-column">
-          <Nav.Link href="#home">Dashboard</Nav.Link>
-          <Nav.Link href="#about">NFT Marketplace</Nav.Link>
-          <Nav.Link href="#services">Tables</Nav.Link>
-          <Nav.Link href="#contact">Kanban</Nav.Link>
-          <Nav.Link href="#about">Profile</Nav.Link>
-          <Nav.Link href="#services">Sign In</Nav.Link>
+          <Col className="mb-5">
+            <h1>PEGASUS UI</h1>
+          </Col>
+          {NavbarInfo.map((nav) => {
+            const { id, icon, title, path } = nav;
+            return (
+              <Nav.Link href={path} key={id}>
+                {icon}
+                <span style={{ marginLeft: 16 }}>{title}</span>
+              </Nav.Link>
+            );
+          })}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

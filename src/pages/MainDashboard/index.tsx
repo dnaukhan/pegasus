@@ -11,7 +11,7 @@ const MainDashboard = () => {
         <Col md={3} lg={3} className="d-none d-md-block">
           <VerticalNavbar />
         </Col>
-        <Col md={9} lg={9}>
+        <Col md={9} lg={9} className="d-none d-md-block">
           <Dashboard />
         </Col>
       </Row>
