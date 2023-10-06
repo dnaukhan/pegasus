@@ -45,20 +45,36 @@ const SmallCardsInfo = [
 ];
 const DashboardSmallCards = () => {
   return (
-    <Stack direction="horizontal" gap={4}>
+    <Row className="mb-3 gx-3">
       {SmallCardsInfo.map((card) => {
         const { id, icon, title, description } = card;
         return (
-          <Row className="p-2" key={id} style={{ borderRadius: 20 }}>
-            <Col>{icon && icon}</Col>
-            <Col>
-              <span>{title}</span>
-              <h5>{description}</h5>
-            </Col>
-          </Row>
+          <Col key={id} sm={6} md={4} lg={2} className="mb-3">
+            <div
+              className="p-2"
+              style={{
+                borderRadius: 20,
+                backgroundColor: "red",
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <div
+                style={{
+                  marginRight: 10,
+                }}
+              >
+                {icon && icon}
+              </div>
+              <div>
+                <span>{title}</span>
+                <h5>{description}</h5>
+              </div>
+            </div>
+          </Col>
         );
       })}
-    </Stack>
+    </Row>
   );
 };
 
